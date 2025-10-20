@@ -1,0 +1,1588 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff7fa;
+  color: #4b134f;
+  overflow-x: hidden;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo i {
+  color: #8a1b47;
+  font-size: 1.5rem;
+}
+
+.logo h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #8a1b47;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #4b134f;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #8a1b47;
+  border-bottom: 2px solid #8a1b47;
+}
+
+/* === HERO === */
+.hero {
+  text-align: center;
+  background: linear-gradient(180deg, #fce8f2, #f7d4e4);
+  padding: 80px 20px;
+  border-radius: 0 0 60px 60px;
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+  color: #4b134f;
+}
+
+.hero p {
+  margin: 10px 0 30px;
+  color: #6e5262;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-container input {
+  padding: 12px 20px;
+  width: 300px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-container button {
+  background-color: #8a1b47;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-container button:hover {
+  background-color: #70103a;
+}
+
+/* === CATEGORÍAS === */
+.categorias {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.categorias h3 {
+  color: #4b134f;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 40px;
+}
+
+.cat-card {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.cat-card:hover {
+  transform: translateY(-5px);
+}
+
+.cat-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.cat-card h4 {
+  margin: 15px 0;
+  color: #8a1b47;
+}
+
+/* === RECETAS DESTACADAS === */
+.recetas-destacadas {
+  text-align: center;
+  padding: 40px 20px 80px;
+  background-color: #fef1f6;
+}
+
+.recetas-destacadas h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.recetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h4 {
+  margin: 15px 0 5px;
+  color: #8a1b47;
+}
+
+.card p {
+  padding: 0 10px 15px;
+  color: #6e5262;
+}
+
+/* === FOOTER SIMPLE === */
+.footer-simple {
+  background-color: #fff;
+  padding: 25px 10px;
+  text-align: center;
+  border-top: 2px solid #f1cadd;
+  color: #4b134f;
+  font-size: 0.95rem;
+}
+
+.footer-simple a {
+  color: #8a1b47;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-simple a:hover {
+  text-decoration: underline;
+}
+
+/* === ESTILOS ADICIONALES === */
+.user {
+  color: #8a1b47;
+  font-weight: 600;
+}
+
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-btn {
+  background: #f8e0eb;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: #8a1b47;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  min-width: 180px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.profile-dropdown.show {
+  display: block;
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 12px 15px;
+  color: #4b134f;
+  text-decoration: none;
+  border-bottom: 1px solid #f1cadd;
+  transition: 0.3s;
+}
+
+.profile-dropdown a:last-child {
+  border-bottom: none;
+}
+
+.profile-dropdown a:hover {
+  background: #f8e0eb;
+  color: #8a1b47;
+}
+
+.btn-ver {
+  display: inline-block;
+  background: #8a1b47;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn-ver:hover {
+  background: #70103a;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+  
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cat-grid, .recetas-grid {
+    padding: 0 15px;
+  }
+  
+  .search-container input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+/* === ESTILOS PARA PÁGINAS ESPECÍFICAS === */
+.page-header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background: linear-gradient(180deg, #fce8f2, #f7d4e4);
+}
+
+.page-header h2 {
+    font-size: 2.2rem;
+    color: #4b134f;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #6e5262;
+    margin-bottom: 20px;
+}
+
+/* Filtros */
+.filtros {
+    padding: 30px 20px;
+    background: #fff;
+}
+
+.filtros-form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filtro-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtro-group input,
+.filtro-group select {
+    padding: 10px 15px;
+    border: 2px solid #f1cadd;
+    border-radius: 8px;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+/* Lista de Recetas */
+.recetas-lista {
+    padding: 40px 20px;
+    background: #fef1f6;
+}
+
+.recetas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Mejorada */
+.card-content {
+    padding: 20px;
+}
+
+.categoria-badge {
+    background: #f8e0eb;
+    color: #8a1b47;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.descripcion {
+    color: #6e5262;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #8a1b47;
+    margin-bottom: 15px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-editar {
+    background: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background: #218838;
+}
+
+.btn-eliminar {
+    background: #dc3545;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+}
+
+/* No resultados */
+.no-resultados {
+    text-align: center;
+    padding: 60px 20px;
+    grid-column: 1 / -1;
+}
+
+.no-resultados i {
+    font-size: 4rem;
+    color: #f1cadd;
+    margin-bottom: 20px;
+}
+
+.no-resultados h3 {
+    color: #4b134f;
+    margin-bottom: 10px;
+}
+
+.no-resultados p {
+    color: #6e5262;
+    margin-bottom: 20px;
+}
+
+/* Mensajes */
+.success-message {
+    background: #e6f7e6;
+    color: #27ae60;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-left: 4px solid #27ae60;
+    text-align: center;
+}
+
+.error-message {
+    background: #ffe6e6;
+    color: #d63031;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-left: 4px solid #d63031;
+    text-align: center;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #8a1b47;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #70103a;
+}
+
+.btn-secondary {
+    background: #f8e0eb;
+    color: #8a1b47;
+    border: 2px solid #8a1b47;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    background: #8a1b47;
+    color: white;
+}
+/* === ESTILOS PARA FORMULARIOS DE AUTENTICACIÓN === */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #fce8f2 0%, #f7d4e4 100%);
+}
+
+.auth-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(138, 27, 71, 0.1);
+    width: 100%;
+    max-width: 450px;
+    border: 2px solid #f8e0eb;
+}
+
+.auth-form h2 {
+    color: #8a1b47;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4b134f;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f1cadd;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    background: #fff7fa;
+}
+
+.form-group input:focus {
+    border-color: #8a1b47;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(138, 27, 71, 0.1);
+    background: #fff;
+}
+
+.auth-form .btn-primary {
+    background-color: #8a1b47;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.auth-form .btn-primary:hover {
+    background-color: #70103a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(138, 27, 71, 0.3);
+}
+
+.auth-form p {
+    text-align: center;
+    margin: 20px 0;
+    color: #6e5262;
+}
+
+.auth-form a {
+    color: #8a1b47;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.auth-form a:hover {
+    color: #70103a;
+    text-decoration: underline;
+}
+
+.auth-form .btn-secondary {
+    display: block;
+    text-align: center;
+    background: #f8e0eb;
+    color: #8a1b47;
+    border: 2px solid #8a1b47;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.auth-form .btn-secondary:hover {
+    background: #8a1b47;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Mensajes de éxito y error para formularios */
+.auth-form .success-message {
+    background: #e6f7e6;
+    color: #27ae60;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #27ae60;
+    font-size: 0.9rem;
+}
+
+.auth-form .error-message {
+    background: #ffe6e6;
+    color: #d63031;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #d63031;
+    font-size: 0.9rem;
+}
+
+/* Responsive para formularios */
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 20px 15px;
+        min-height: 70vh;
+    }
+    
+    .auth-form {
+        padding: 30px 25px;
+        margin: 20px 0;
+    }
+    
+    .auth-form h2 {
+        font-size: 1.6rem;
+    }
+    
+    .form-group input {
+        padding: 10px 12px;
+    }
+}
+
+/* Estilos para ver-receta.php */
+.receta-detalle {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.receta-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.receta-header img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.receta-info h1 {
+    color: #4b134f;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.receta-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.receta-meta span {
+    color: #8a1b47;
+    font-size: 0.9rem;
+}
+
+.receta-desc {
+    color: #6e5262;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.btn-favorito {
+    background: #f8e0eb;
+    color: #8a1b47;
+    border: 2px solid #8a1b47;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn-favorito:hover,
+.btn-favorito.active {
+    background: #8a1b47;
+    color: white;
+}
+
+.receta-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.ingredientes,
+.instrucciones {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.ingredientes h3,
+.instrucciones h3 {
+    color: #4b134f;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ingrediente-item {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1cadd;
+}
+
+.ingrediente-item i {
+    color: #8a1b47;
+    margin-top: 2px;
+}
+
+.instruccion-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f1cadd;
+}
+
+.instruccion-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.paso-num {
+    background: #8a1b47;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.comentarios-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.comentarios-section h3 {
+    color: #4b134f;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comentario-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #f1cadd;
+    border-radius: 8px;
+    min-height: 100px;
+    margin-bottom: 15px;
+    resize: vertical;
+    font-family: "Poppins", sans-serif;
+}
+
+.login-prompt {
+    background: #f8e0eb;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-prompt a {
+    color: #8a1b47;
+    font-weight: 500;
+}
+
+.comentario-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #f1cadd;
+}
+
+.comentario-item:last-child {
+    border-bottom: none;
+}
+
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.comentario-header strong {
+    color: #4b134f;
+}
+
+.comentario-header span {
+    color: #6e5262;
+    font-size: 0.9rem;
+}
+
+.no-comentarios {
+    text-align: center;
+    color: #6e5262;
+    padding: 40px 20px;
+}
+
+/* Responsive para receta detalle */
+@media (max-width: 768px) {
+    .receta-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .receta-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .receta-info h1 {
+        font-size: 2rem;
+    }
+    
+    .receta-header img {
+        height: 250px;
+    }
+}
+/* === ESTILOS PARA VER RECETA === */
+.receta-detalle {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.receta-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.receta-imagen img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.receta-info h1 {
+    color: #4b134f;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.receta-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.receta-meta span {
+    color: #8a1b47;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.receta-desc {
+    color: #6e5262;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.favorito-form {
+    margin-bottom: 20px;
+}
+
+.btn-favorito {
+    background: #f8e0eb;
+    color: #8a1b47;
+    border: 2px solid #8a1b47;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+}
+
+.btn-favorito:hover,
+.btn-favorito.active {
+    background: #8a1b47;
+    color: white;
+}
+
+.receta-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.ingredientes,
+.instrucciones {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.ingredientes h3,
+.instrucciones h3 {
+    color: #4b134f;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ingrediente-item {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1cadd;
+}
+
+.ingrediente-item i {
+    color: #8a1b47;
+    margin-top: 2px;
+}
+
+.instruccion-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f1cadd;
+}
+
+.instruccion-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.paso-num {
+    background: #8a1b47;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.paso-texto {
+    line-height: 1.6;
+    color: #6e5262;
+}
+
+/* Comentarios */
+.comentarios-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.comentarios-section h3 {
+    color: #4b134f;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comentario-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #f1cadd;
+    border-radius: 8px;
+    min-height: 100px;
+    margin-bottom: 15px;
+    resize: vertical;
+    font-family: "Poppins", sans-serif;
+}
+
+.login-prompt {
+    background: #f8e0eb;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-prompt a {
+    color: #8a1b47;
+    font-weight: 500;
+}
+
+.comentario-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #f1cadd;
+}
+
+.comentario-item:last-child {
+    border-bottom: none;
+}
+
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.comentario-header strong {
+    color: #4b134f;
+}
+
+.comentario-header span {
+    color: #6e5262;
+    font-size: 0.9rem;
+}
+
+.comentario-texto {
+    color: #6e5262;
+    line-height: 1.6;
+}
+
+.eliminar-comentario-form {
+    margin: 0;
+}
+
+.btn-eliminar {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+}
+
+.no-comentarios {
+    text-align: center;
+    color: #6e5262;
+    padding: 40px 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .receta-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .receta-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .receta-info h1 {
+        font-size: 2rem;
+    }
+    
+    .receta-imagen img {
+        height: 250px;
+    }
+    
+    .comentario-header {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+/* === ESTILOS ESPECÍFICOS PARA FAVORITOS === */
+.eliminar-favorito-form {
+    margin: 0;
+}
+
+.btn-eliminar {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.card-actions .btn-ver {
+    background: #8a1b47;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-actions .btn-ver:hover {
+    background: #70103a;
+    transform: translateY(-2px);
+}
+
+/* Mejoras para las cards de favoritos */
+.card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.categoria-badge {
+    background: #f8e0eb;
+    color: #8a1b47;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.card h4 {
+    color: #4b134f;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.descripcion {
+    color: #6e5262;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #8a1b47;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Mensaje de no resultados mejorado */
+.no-resultados {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin: 40px auto;
+    max-width: 600px;
+}
+
+.no-resultados h3 {
+    color: #4b134f;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.no-resultados p {
+    color: #6e5262;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive para favoritos */
+@media (max-width: 768px) {
+    .card-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .card-actions .btn-ver,
+    .card-actions .btn-eliminar {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .card-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+/* === ESTILOS PARA FORMULARIOS DE RECETAS === */
+.form-container {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #fce8f2 0%, #f7d4e4 100%);
+    min-height: calc(100vh - 200px);
+}
+
+.auth-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(138, 27, 71, 0.1);
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 2px solid #f8e0eb;
+}
+
+.auth-form h2 {
+    color: #8a1b47;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4b134f;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #f1cadd;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    background: #fff7fa;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #8a1b47;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(138, 27, 71, 0.1);
+    background: #fff;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #6e5262;
+    font-size: 0.8rem;
+}
+
+/* Botones adicionales */
+.btn-editar {
+    background: #28a745;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-editar:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+/* Mejoras para las cards de mis recetas */
+.eliminar-receta-form {
+    margin: 0;
+}
+
+/* Responsive para formularios */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px 15px;
+    }
+    
+    .auth-form {
+        padding: 30px 25px;
+        margin: 20px 0;
+    }
+    
+    .auth-form h2 {
+        font-size: 1.6rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .card-actions .btn-ver,
+    .card-actions .btn-editar,
+    .card-actions .btn-eliminar {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+/* === FILTROS SIMPLIFICADOS === */
+.filtros {
+    background: #fff;
+    padding: 30px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.filtros-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filtros-form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8a1b47;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid #f1cadd;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
+    background: #fff7fa;
+}
+
+.search-box input:focus {
+    border-color: #8a1b47;
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(138, 27, 71, 0.1);
+}
+
+.filtros-form select {
+    padding: 12px 15px;
+    border: 2px solid #f1cadd;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    background: #fff7fa;
+    min-width: 200px;
+    cursor: pointer;
+}
+
+.filtros-form select:focus {
+    border-color: #8a1b47;
+    outline: none;
+}
+
+.btn-buscar {
+    background: #8a1b47;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-buscar:hover {
+    background: #70103a;
+    transform: translateY(-2px);
+}
+
+.btn-limpiar {
+    background: #f8e0eb;
+    color: #8a1b47;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid #8a1b47;
+}
+
+.btn-limpiar:hover {
+    background: #8a1b47;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filtros-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-box {
+        min-width: auto;
+    }
+    
+    .filtros-form select {
+        min-width: auto;
+    }
+    
+    .btn-buscar,
+    .btn-limpiar {
+        justify-content: center;
+    }
+}
